@@ -8,33 +8,34 @@ Golang `struct` graph visualizer
 
     gostruct -b1 example A | dot -Tpng -o/tmp/a.png
 
+~~~golang
+package example
 
-    package example
+type E struct {
+    key int
+    val []rune
+    D   *D
+}
 
-    type E struct {
-        key int
-        val []rune
-        D   *D
-    }
+type D struct {
+    E *E
+}
 
-    type D struct {
-        E *E
-    }
+type C struct {
+    E E
+}
 
-    type C struct {
-        E E
-    }
-
-    type B struct {
-        D *D
-    }
-    type A struct {
-        B1 B
-        C2 []*C
-        D6 *D
-        E9 []E
-        *C
-    }
+type B struct {
+    D *D
+}
+type A struct {
+    B1 B
+    C2 []*C
+    D6 *D
+    E9 []E
+    *C
+}
+~~~
 
 ![fig](https://raw.githubusercontent.com/noyuno/gostruct/master/example/example.png)
 
