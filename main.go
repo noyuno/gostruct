@@ -21,7 +21,7 @@ var (
 	builtinTypes = []string{
 		"bool", "byte", "complex64", "complex128", "error", "float32", "float64",
 		"int", "int8", "int16", "int32", "int64", "rune", "string",
-		"uint", "uint8", "uint16", "uint32", "uint64", "uintptr",
+		"uint", "uint8", "uint16", "uint32", "uint64", "uintptr", "map",
 	}
 )
 
@@ -145,8 +145,8 @@ func main() {
 	var label bool
 	flag.StringVar(&directory, "d", ".", "target directory")
 	flag.BoolVar(&debug, "debug", false, "outputs debug text")
-	flag.BoolVar(&builtin, "b", false, "show builtin packages")
-	flag.BoolVar(&builtin, "builtin", false, "show builtin packages")
+	flag.BoolVar(&builtin, "b", false, "show builtin types")
+	flag.BoolVar(&builtin, "builtin", false, "show builtin types")
 	flag.BoolVar(&label, "l", true, "show label")
 	flag.BoolVar(&label, "label", true, "show label")
 	flag.Parse()
