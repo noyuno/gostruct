@@ -127,7 +127,10 @@ func GenerateEdge(list map[string][]Member, name string, label bool) string {
 func Generate(list map[string][]Member, name string, label bool) string {
 	ret := `
 digraph G {
-	rankdir = "LR"
+	rankdir = "LR";
+	graph [fontname = "Inconsolata"];
+	node [fontname = "Inconsolata"];
+	edge [fontname = "Inconsolata"];
 `
 	ret += GenerateEdge(list, name, label)
 	ret += `
@@ -165,7 +168,4 @@ func main() {
 	graph := Generate(list, flag.Args()[0], label)
 
 	fmt.Println(graph)
-}
-
-type Afoo struct {
 }
